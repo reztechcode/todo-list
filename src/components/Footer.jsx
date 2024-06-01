@@ -8,9 +8,9 @@ export default function Footer({ items }) {
   return (
     <div className="row justify-content-center pt-2 mb-3">
       <div className="col-md-6">
-        <footer className="card">
+        <footer className="card bg-body-tertiary">
           <div className="card-body fs-6">
-            Ada <span className="fw-semibold">{totalItems}</span> barang di daftar belanjaan, {checkedItems} barang sudah selesai terbeli.
+             Di daftar belanjaan kamu ada <span className="fw-semibold text-primary">{totalItems} barang</span>, <span className="text-success text-capitalize fw-semibold">{checkedItems} barang</span> sudah selesai terbeli.
           </div>
         </footer>
       </div>

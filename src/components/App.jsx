@@ -38,13 +38,22 @@ export default function App() {
   function handleDeleteItem(id,data) {
     setItems((items) => items.filter((item) => item.id !== id));
     toast.error(data.name+", nya berhasil di hapus");
-    // console.log(data.name)
+  }
+
+  function handleEditItem(item) {
+    // setItems((items) => items.filter((item) => item.id !== id));
+    // toast.error(item.name);
+    // console.log(item)
+    return
   }
   
   function handleToggleItem(id,data) {
     setItems((items) => items.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item)));
-    toast.success(data.name+", selesai di beli");
-    // console.log(data.name)
+    if (!data.checked) {
+      toast.success(data.name+", sudah Selesai di Beli");
+    }else{
+      toast.warning(data.name+", Gak jadi di Beli kah ?");
+    }
   }
 
   function handleClearItems() {
@@ -56,7 +65,7 @@ export default function App() {
       <ToastContainer className="fs-6" />
       <Header />
       <Form onAddItem={handleAddItem} />
-      <GroceryList items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} onClearItems={handleClearItems} />
+      <GroceryList items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} onClearItems={handleClearItems} onEditItem={handleEditItem} />
       <Footer items={items} />
       <Copyright />
     </div>

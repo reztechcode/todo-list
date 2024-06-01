@@ -1,7 +1,7 @@
 import { useState } from 'react';
 import Item from './Item';
 
-export default function GroceryList({ items, onDeleteItem, onToggleItem, onClearItems }) {
+export default function GroceryList({ items, onDeleteItem, onToggleItem, onClearItems, onEditItem }) {
   const [sortBy, setSortBy] = useState('input');
 
   let sortedItems;
@@ -24,7 +24,7 @@ export default function GroceryList({ items, onDeleteItem, onToggleItem, onClear
       <div className="col-md-8">
         <ul className='list-group list-grup-border'>
           {sortedItems.map((item) => (
-            <Item item={item} key={item.id} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} />
+            <Item item={item} key={item.id} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} onEditItem={onEditItem} />
           ))}
         </ul>
       </div>

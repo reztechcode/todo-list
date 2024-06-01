@@ -94,9 +94,10 @@ h1 {
 }
 
 .wm{
-  color:white; 
+  color:rgb(21, 255, 224); 
+  text-shadow: 1px 4px 5px rgba(0,216,247,0.63);
 }
 .wm:hover{
   color: #DAD3BE;
-  font-size: large;
+  font-size: larger;
 }

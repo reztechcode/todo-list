@@ -1,6 +1,6 @@
 @import url('https://fonts.googleapis.com/css2?family=Borel&family=Comfortaa:wght@300;400;700&display=swap');
-
-* {
+@import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+/* * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
@@ -8,112 +8,55 @@
 
 html {
   font-size: 62.5%;
-}
+} */
 
 body {
-  font-size: 2.4rem;
+  font-size: 1.4rem;
   font-family: 'Comfortaa', sans-serif;
   color: #283618;
-  background-color: #fefae0;
+  background-color: #6B8A7A;
 }
-
-.app {
-  width: 70%;
-  height: 100vh;
-  margin: auto;
-  display: grid;
-  grid-template-rows: auto auto 1fr auto;
-}
-
 h1 {
-  font-family: 'Borel';
+  font-family: 'Poppins';
   text-align: center;
-  background-color: #283618;
+  /* background-color: #B7B597; */
   color: white;
-  font-size: 6rem;
-  padding: 4rem 0 1rem;
+  /* font-size: 6rem; */
+  padding: 1rem 0 1rem;
 }
-
-.add-form {
-  background-color: #dda15e;
-  padding: 2.8rem 0;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 0.8rem;
-}
-
-.add-form h3 {
-  margin-right: 2rem;
-  font-size: 2.4rem;
-}
-
-button,
-select,
-input {
-  background-color: #fefae0;
-  font-family: inherit;
-  border: none;
-  border-radius: 3rem;
-  padding: 1.2rem 3.2rem;
-  font-size: 1.8rem;
-  cursor: pointer;
-}
-
-button {
-  background-color: #283618;
-  color: #fefae0;
+.btn-submit {
+  background-color: #9ac072;
+  color: #ffffff;
   font-weight: bold;
+  border-color: #d7e8df;
+  letter-spacing: 1.2px;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
-
-.list {
-  background-image: url(img/paper-bg.jpg);
-  background-repeat: repeat-y;
-  background-attachment: local;
-  color: #fefae0;
-  padding: 2.3rem 0 0;
-  display: flex;
-  justify-content: space-between;
-  flex-direction: column;
-  gap: 3.2rem;
-  align-items: center;
-  overflow-y: scroll;
-}
-
-.list ul {
-  list-style: none;
-  width: 80%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-
-.list li {
-  color: #283618;
-  font-size: 4rem;
+.btn-submit:hover {
+  background-color: #88a36a;
+  color: #ffffff;
   font-weight: bold;
-  display: flex;
-  align-items: center;
-  gap: 2rem;
-  margin-bottom: 3.6rem;
+  border-color: #a8d4bd;
+  padding-left: 14px;
+  padding-right: 14px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
 }
-
-.list input[type='checkbox'] {
-  height: 3rem;
-  width: 3rem;
-  accent-color: #283618;
-}
-
-.list li button {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  cursor: pointer;
-  font-size: 2.6rem;
-  padding: 0;
-  width: 3rem;
-  height: 3rem;
-  background-color: red;
+.list-grup-border{
+  border-radius: 13px;
+  -webkit-border-radius: 13px;
+  -moz-border-radius: 13px;
+  -ms-border-radius: 13px;
+  -o-border-radius: 13px;
 }
 
 .actions {
@@ -130,11 +73,30 @@ button {
   margin: 0 0.8rem;
 }
 
-.stats {
+/* .stats {
   background-color: #bc6c25;
   color: white;
   text-align: center;
   padding: 3.2rem 0;
   font-size: 2rem;
   font-weight: bold;
+} */
+@media (max-width: 768px) {
+  html {
+    font-size: 70%;
+  }
+}
+@media (max-width: 576px) {
+  html {
+    font-size: 70%;
+  }
+}
+
+.btn-delete{
+  padding: 0;
+  font-size: 28px;
+  color: #98967a;
+}
+.btn-delete:hover{
+  color: #aaa9a7;
 }

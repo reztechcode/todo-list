@@ -1,11 +1,21 @@
 export default function Item({ item, onDeleteItem, onToggleItem }) {
   return (
-    <li key={item.id}>
-      <input type="checkbox" checked={item.checked} onChange={() => onToggleItem(item.id)} />
-      <span style={item.checked ? { textDecoration: 'line-through' } : {}}>
-        {item.quantity} {item.name}
-      </span>
-      <button onClick={() => onDeleteItem(item.id)}>&times;</button>
+    <li className="list-group-item" key={item.id}>
+      <div className="row justify-content-center">
+        <div className="col-2">
+          <input type="checkbox" className="form-check-input" checked={item.checked} onChange={() => onToggleItem(item.id)} />
+        </div>
+        <div className="col-7">
+          <span style={item.checked ? { textDecoration: 'line-through' } : {}}>
+            {item.quantity} {item.name}
+          </span>
+        </div>
+        <div className="col-2">
+          <button className="btn btn-delete" onClick={() => onDeleteItem(item.id)}>
+          <i class='bx bx-trash icon'></i>
+          </button>
+        </div>
+      </div>
     </li>
   );
 }

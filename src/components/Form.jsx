@@ -18,20 +18,40 @@ export default function Form({ onAddItem }) {
     setQuantity(1);
   }
 
-  const quantityNum = [...Array(20)].map((_, i) => (
+  const quantityNum = [...Array(10)].map((_, i) => (
     <option value={i + 1} key={i + 1}>
       {i + 1}
     </option>
   ));
 
   return (
-    <form className="add-form" onSubmit={handleSubmit}>
-      <h3>Hari ini belanja apa kita?</h3>
-      <select value={quantity} onChange={(e) => setQuantity(Number(e.target.value))}>
-        {quantityNum}
-      </select>
-      <input type="text" placeholder="nama barang..." value={name} onChange={(e) => setName(e.target.value)} />
-      <button>Tambah</button>
-    </form>
+    <div className="row justify-content-center">
+      <div className="col-lg-8">
+        <h4 className='text-center pb-1 text-white'>Yuk masukin list Belanja hari ini?</h4>
+        <form className='add-form' onSubmit={handleSubmit}>
+          <div className="row justify-content-center p-0 g-2">
+            <div className="col-md-6 col-lg-6">
+              <input type="text" className='form-control form-control-lg-lg' placeholder="masukan nama barang..." value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
+          <div className="col-md-auto">
+            <select className='form-select' value={quantity} onChange={(e) => setQuantity(Number(e.target.value))}>
+              {quantityNum}
+            </select>
+          </div>
+            <div className="col-auto p-0"><button className='btn btn-submit'>Tambah</button></div>
+          </div>
+        </form>
+      </div>
+    </div>
   );
 }
+
+{/* <div className="col-2 col-lg-auto p-1">
+              
+            </div>
+            <div className="col-6 col-lg-auto p-1">
+              <input type="text" className='form-control form-control-lg' placeholder="nama barang..." value={name} onChange={(e) => setName(e.target.value)} />
+            </div>
+            <div className="col-2 col-lg-auto p-1">
+              <button className='btn btn-lg btn-primary'>Tambah</button>
+            </div> */}

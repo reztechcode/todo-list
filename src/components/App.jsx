@@ -1,26 +1,27 @@
 import { useState } from 'react';
 import Header from './Header';
 import Form from './Form';
-import GroceryList from './GroceryList';
+import GroceryList from './ItemList';
 import Footer from './Footer';
+import Copyright from './Copyright';
 
 const groceryItems = [
   {
     id: 1,
-    name: 'Kopi Bubuk',
+    name: 'Bayam',
     quantity: 2,
     checked: true,
   },
   {
     id: 2,
-    name: 'Gula Pasir',
+    name: 'Tahu',
     quantity: 5,
     checked: false,
   },
   {
     id: 3,
-    name: 'Air Mineral',
-    quantity: 3,
+    name: 'Tempe',
+    quantity: 1,
     checked: false,
   },
 ];
@@ -45,11 +46,12 @@ export default function App() {
   }
 
   return (
-    <div className="app">
+    <div className="app container-fluid d-flex flex-column min-vh-100">
       <Header />
       <Form onAddItem={handleAddItem} />
       <GroceryList items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} onClearItems={handleClearItems} />
       <Footer items={items} />
+      <Copyright />
     </div>
   );
 }

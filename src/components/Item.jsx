@@ -14,9 +14,9 @@ export default function Item({ item, onDeleteItem, onToggleItem, onEditItem }) {
           <button className="btn btn-delete" onClick={() => onDeleteItem(item.id,item)}>
           <i className='bx bx-trash icon'></i>
           </button>
-          <button className="btn btn-delete" onClick={() => onEditItem(item)}>
+          {/* <button className="btn btn-delete" onClick={() => onEditItem(item)}>
           <i className='bx bx-edit-alt'></i>
-          </button>
+          </button> */}
         </div>
       </div>
     </li>

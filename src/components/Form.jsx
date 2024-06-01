@@ -37,7 +37,7 @@ export default function Form({ onAddItem }) {
         <form className='add-form' onSubmit={handleSubmit}>
           <div className="row justify-content-center p-0 g-2">
             <div className="col-md-6 col-lg-6">
-              <input type="text" className='form-control form-control-lg-lg' placeholder="masukan nama barang..." value={name} onChange={(e) => setName(e.target.value)} />
+              <input type="text" className='form-control' placeholder="masukan nama barang..." value={name} onChange={(e) => setName(e.target.value)} />
             </div>
           <div className="col-md-auto">
             <select className='form-select' value={quantity} onChange={(e) => setQuantity(Number(e.target.value))}>

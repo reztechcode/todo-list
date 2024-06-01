@@ -11,9 +11,7 @@ body {
 h1 {
   font-family: 'Poppins';
   text-align: center;
-  /* background-color: #B7B597; */
   color: white;
-  /* font-size: 6rem; */
   padding: 0.5rem 0 0.3rem;
 }
 .btn-submit {
@@ -75,12 +73,12 @@ h1 {
 } */
 @media (max-width: 768px) {
   html {
-    font-size: 70%;
+    font-size: 95%;
   }
 }
 @media (max-width: 576px) {
-  html {
-    font-size: 70%;
+  html{
+    font-size: 117%;
   }
 }
 

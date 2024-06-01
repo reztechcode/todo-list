@@ -4,7 +4,8 @@ import Form from './Form';
 import GroceryList from './ItemList';
 import Footer from './Footer';
 import Copyright from './Copyright';
-
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 const groceryItems = [
   {
     id: 1,
@@ -31,14 +32,19 @@ export default function App() {
 
   function handleAddItem(item) {
     setItems([...items, item]);
+    toast.success("Barang nya berhasil di masukin ke List");
   }
 
-  function handleDeleteItem(id) {
+  function handleDeleteItem(id,data) {
     setItems((items) => items.filter((item) => item.id !== id));
+    toast.error(data.name+", nya berhasil di hapus");
+    // console.log(data.name)
   }
-
-  function handleToggleItem(id) {
+  
+  function handleToggleItem(id,data) {
     setItems((items) => items.map((item) => (item.id === id ? { ...item, checked: !item.checked } : item)));
+    toast.success(data.name+", selesai di beli");
+    // console.log(data.name)
   }
 
   function handleClearItems() {
@@ -47,6 +53,7 @@ export default function App() {
 
   return (
     <div className="app container-fluid d-flex flex-column min-vh-100">
+      <ToastContainer className="fs-6" />
       <Header />
       <Form onAddItem={handleAddItem} />
       <GroceryList items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} onClearItems={handleClearItems} />

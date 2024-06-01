@@ -1,5 +1,5 @@
 export default function Footer({ items }) {
-  if (items.length === 0) return <footer className="stats">Daftar belanjaan masih kosong!</footer>;
+  if (items.length === 0) return <footer className="text-center text-light">Kamu beli memiliki daftar belanjaan, yuk isi dulu 🤗</footer>;
 
   const totalItems = items.length;
   const checkedItems = items.filter((item) => item.checked).length;

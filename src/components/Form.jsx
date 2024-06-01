@@ -1,4 +1,5 @@
 import { useState } from 'react';
+import { ToastContainer, toast } from 'react-toastify';
 
 export default function Form({ onAddItem }) {
   const [name, setName] = useState('');
@@ -7,7 +8,12 @@ export default function Form({ onAddItem }) {
   function handleSubmit(e) {
     e.preventDefault();
 
-    if (!name) return;
+    if (!name) {
+      toast.warning("Isi dulu nama barang nya", {
+        position: "top-right"
+      });
+      return
+    };
 
     const newItem = { name, quantity, checked: false, id: Date.now() };
     onAddItem(newItem);

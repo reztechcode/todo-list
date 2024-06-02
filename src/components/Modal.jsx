@@ -21,6 +21,7 @@ export default function Modal({ openModal, data, onUpdate, close }) {
             <div className="modal-container min-vh-100">
                 <div className="card modal-box">
                     <h4 className='p-2 text-primary'>Edit Data - <span className='fst-italic'>{data.name}</span></h4>
+                    <small>id data: {data.id}</small>
                     <form className='add-form' onSubmit={handleSubmit}>
                         <div className="row justify-content-center p-0 g-2">
                             <div className="col-md-12 col-lg-6">

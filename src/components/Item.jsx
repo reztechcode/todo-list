@@ -7,7 +7,7 @@ export default function Item({ item, onDeleteItem, onToggleItem, onEditItem }) {
         </div>
         <div className="col-7">
           <span style={item.checked ? { textDecoration: 'line-through' } : {}}>
-            {item.quantity} {item.name}
+            {item.quantity} {item.name} - id: {item.id}
           </span>
         </div>
         <div className="col-2">

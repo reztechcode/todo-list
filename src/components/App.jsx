@@ -34,26 +34,27 @@ export default function App() {
   const [items, setItems] = useState(groceryItems);
   const [show, setShow] = useState(false);
   const [editData, setEditData] = useState([])
+
   function handleAddItem(item) {
     setItems([...items, item]);
     toast.success("Barang nya berhasil di masukin ke List");
   }
 
   function handleEditItem(item) {
-    const newData = { id: Date.now(), name: item.name, checked: item.checked }
-    const delItems = items
-    // setItems((items) => items.filter((item) => item.id !== item.id));
-    delItems.splice((item.id - 1))
-    // console.log(newData)
-    setItems([...items, item]);
-    toast.info("Perubahan Berhasil Di lakukan");
+    const id = item.id
+    const newItems = [...items]; // Create a copy
+    const itemIndex = newItems.findIndex((item) => item.id === id);
+    // console.log(itemIndex)
+    if (itemIndex !== -1) {
+      const updatedItem = { ...newItems[itemIndex], ...item }; // Merge data
+      newItems[itemIndex] = updatedItem; // Replace at index
+    }
+    setItems(newItems); 
     setShow(false);
-    // splice
-    // setItems([...items, item]);
   }
 
   function handleDeleteItem(id,data) {
-    setItems((items) => items.filter((item) => item.id !== id));
+    setItems((items) => items.filter((items) => items.id !== id));
     toast.error(data.name+", nya berhasil di hapus");
   }
 
@@ -84,7 +85,7 @@ export default function App() {
 
   return (
     <div className="app container-fluid d-flex flex-column min-vh-100">
-      <ToastContainer limit={3} className="fs-6" />
+      <ToastContainer className="fs-6" />
       <Header />
       <Form onAddItem={handleAddItem} />
       <GroceryList items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} onClearItems={handleClearItems} onEditItem={showEditItem} />

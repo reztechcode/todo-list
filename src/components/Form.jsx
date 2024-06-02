@@ -18,8 +18,7 @@ export default function Form({ onAddItem }) {
     const newItem = { name, quantity, checked: false, id: Date.now() };
     onAddItem(newItem);
 
-    console.log(newItem);
-
+    // console.log(newItem);
     setName('');
     setQuantity(1);
   }

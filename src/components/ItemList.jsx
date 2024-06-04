@@ -23,8 +23,8 @@ export default function GroceryList({ items, onDeleteItem, onToggleItem, onClear
     <div className="row justify-content-center pt-3">
       <div className="col-md-8">
         <ul className='list-group list-grup-border'>
-          {sortedItems.map((item) => (
-            <Item item={item} key={item.id} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} onEditItem={onEditItem} />
+          {sortedItems.map((item,index) => (
+            <Item item={item} key={index} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} onEditItem={onEditItem} />
           ))}
         </ul>
       </div>

@@ -80,6 +80,29 @@ h1 {
   html{
     font-size: 110%;
   }
+  .modal-box {
+    width: 95%;
+    height: fit-content;
+    background: #fff;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    padding: 0px;
+    text-align: center;
+    border-radius: 17px;
+    transform: translate(-50%, -50%);
+    -webkit-transform: translate(-50%, -50%);
+    -moz-transform: translate(-50%, -50%);
+    -ms-transform: translate(-50%, -50%);
+    -o-transform: translate(-50%, -50%);
+    -webkit-border-radius: 17px;
+    -moz-border-radius: 17px;
+    -ms-border-radius: 17px;
+    -o-border-radius: 17px;
+  }
+  .add-form{
+    padding: 20px;
+  }
 }
 
 .btn-delete{
@@ -98,4 +121,50 @@ h1 {
 .wm:hover{
   color: #DAD3BE;
   font-size: larger;
+}
+
+.modal-container {
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.4);
+  position: absolute;
+  top: 0;
+  left: 0;
+  animation-name:show;
+  animation-duration: 0.7s;
+}
+
+
+.modal-box {
+  /* width: fit-content;
+  height: fit-content; */
+  background: #fff;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  padding: 20px;
+  text-align: center;
+  border-radius: 17px;
+  transform: translate(-50%, -50%);
+  -webkit-transform: translate(-50%, -50%);
+  -moz-transform: translate(-50%, -50%);
+  -ms-transform: translate(-50%, -50%);
+  -o-transform: translate(-50%, -50%);
+  -webkit-border-radius: 17px;
+  -moz-border-radius: 17px;
+  -ms-border-radius: 17px;
+  -o-border-radius: 17px;
+}
+.modal-box h3 {
+  color: #2da4fb;
+}
+.modal-box .input {
+  width: 100%;
+  margin: 0.5rem 0;
+}
+.modal-box .input {
+  width: 100%;
+}
+.modal-box .input input {
+  width: 80%;
 }

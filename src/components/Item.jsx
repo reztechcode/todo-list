@@ -3,19 +3,19 @@ export default function Item({ item, onDeleteItem, onToggleItem, onEditItem }) {
     <li className="list-group-item" key={item.id}>
       <div className="row justify-content-center">
         <div className="col-2">
-          <input type="checkbox" className="form-check-input" checked={item.checked} onChange={() => onToggleItem(item.id,item)} />
+          <input id={item.id} type="checkbox" className="form-check-input" checked={item.checked} onChange={() => onToggleItem(item.id, item)} />
         </div>
         <div className="col-7">
-          <span style={item.checked ? { textDecoration: 'line-through' } : {}}>
+          <label htmlFor={item.id} style={item.checked ? { textDecoration: 'line-through' } : {}}>
             {item.quantity} {item.name}
-          </span>
+          </label>
         </div>
         <div className="col-2">
-          <button className="btn btn-delete" onClick={() => onDeleteItem(item.id,item)}>
-          <i className='bx bx-trash icon'></i>
+          <button className="btn btn-delete" onClick={() => onDeleteItem(item.id, item)}>
+            <i className='bx bx-trash icon'></i>
           </button>
           <button className="btn btn-delete" onClick={() => onEditItem(item)}>
-          <i className='bx bx-edit-alt'></i>
+            <i className='bx bx-edit-alt'></i>
           </button>
         </div>
       </div>

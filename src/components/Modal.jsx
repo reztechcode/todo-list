@@ -31,7 +31,7 @@ export default function Modal({ openModal, data, onUpdate, close }) {
                             </div>
                         </div>
                     </form>
-                    <a href="#" className='link-primary pt-3 fs-6' onClick={close}>Close</a>
+                    <a href="#" className='link-danger pt-3 fs-6' onClick={close}>Close</a>
                 </div>
             </div>
         );

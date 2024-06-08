@@ -5,7 +5,6 @@ export default function Modal({ openModal, data, onUpdate, close }) {
     const [name, setName] = useState('');
     function handleSubmit(e) {
         e.preventDefault();
-        // console.log(name)
         if (!name) {
           toast.warning("Sepertinya kamu belum melakukan perubahan apapun 🤔", {
             position: "top-center"

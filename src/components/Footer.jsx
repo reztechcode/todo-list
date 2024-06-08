@@ -1,9 +1,11 @@
 export default function Footer({ items }) {
-  if (items.length === 0) return <footer className="text-center text-light">Kamu beli memiliki daftar belanjaan, yuk isi dulu 🤗</footer>;
+  if (items.length === 0) return 
+  <footer className="text-center text-light pt-3">
+    Kamu beli memiliki daftar belanjaan, yuk isi dulu 🤗
+  </footer>;
 
   const totalItems = items.length;
   const checkedItems = items.filter((item) => item.checked).length;
-  // const percentage = Math.round((checkedItems / totalItems) * 100);
 
   return (
     <div className="row justify-content-center pt-2 mb-3">
@@ -15,10 +17,5 @@ export default function Footer({ items }) {
         </footer>
       </div>
     </div>
-    // <footer class="navbar bg-body-tertiary mt-auto">
-    //   <div class="container">
-    //     <a class="navbar-brand" href="#">Navbar</a>
-    //   </div>
-    // </footer>
   );
 }

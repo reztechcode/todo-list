@@ -1,16 +1,16 @@
 import { useState } from 'react';
 import Header from './Header';
 import Form from './Form';
-import GroceryList from './ItemList';
+import List from './ItemList';
 import Footer from './Footer';
 import Copyright from './Copyright';
 import Modal from './Modal'
 import { ToastContainer, toast } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
-const groceryItems = [
+const ListItem = [
   {
     id: 1,
-    name: 'Bayam',
+    name: 'Telur',
     quantity: 2,
     checked: true,
   },
@@ -19,19 +19,13 @@ const groceryItems = [
     name: 'Tahu',
     quantity: 5,
     checked: false,
-  },
-  {
-    id: 3,
-    name: 'Tempe',
-    quantity: 1,
-    checked: false,
-  },
+  }
 ];
 
 
 
 export default function App() {
-  const [items, setItems] = useState(groceryItems);
+  const [items, setItems] = useState(ListItem);
   const [show, setShow] = useState(false);
   const [editData, setEditData] = useState([])
 
@@ -39,18 +33,18 @@ export default function App() {
     setItems([...items, item]);
     toast.success("Barang nya berhasil di masukin ke List");
   }
-
+  
   function handleEditItem(item) {
     const id = item.id
     const newItems = [...items]; // Create a copy
     const itemIndex = newItems.findIndex((item) => item.id === id);
-    // console.log(itemIndex)
     if (itemIndex !== -1) {
       const updatedItem = { ...newItems[itemIndex], ...item }; // Merge data
       newItems[itemIndex] = updatedItem; // Replace at index
     }
     setItems(newItems); 
     setShow(false);
+    toast.info("Barang berhasil di update");
   }
 
   function handleDeleteItem(id,data) {
@@ -79,19 +73,23 @@ export default function App() {
   }
 
   function handleClearItems() {
+    if (items.length == 0) {
+      toast.error("Data masih kosong");
+    }else{
     setItems([]);
+    toast.info("Data Berhasil di bersihkan ");
+    }
   }
-  // console.log(editData)
 
   return (
     <div className="app container-fluid d-flex flex-column min-vh-100">
       <ToastContainer className="fs-6" />
       <Header />
       <Form onAddItem={handleAddItem} />
-      <GroceryList items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} onClearItems={handleClearItems} onEditItem={showEditItem} />
+      <List items={items} onDeleteItem={handleDeleteItem} onToggleItem={handleToggleItem} onClearItems={handleClearItems} onEditItem={showEditItem} />
       <Footer items={items} />
-      <Copyright />
       <Modal openModal={show} data={editData} onUpdate={handleEditItem} close={closeEditItem} />
+      <Copyright />
     </div>
   );
 }

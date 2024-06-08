@@ -49,19 +49,6 @@ h1 {
   -o-border-radius: 13px;
 }
 
-.actions {
-  background-color: #606c38;
-  width: 100%;
-  padding: 2rem 0;
-  text-align: center;
-}
-
-.actions button,
-.actions select {
-  padding: 0.8rem 2.4rem;
-  font-size: 1.4rem;
-  margin: 0 0.8rem;
-}
 
 /* .stats {
   background-color: #bc6c25;

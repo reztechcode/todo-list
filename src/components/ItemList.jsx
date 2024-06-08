@@ -1,42 +1,22 @@
-import { useState } from 'react';
 import Item from './Item';
 
-export default function GroceryList({ items, onDeleteItem, onToggleItem, onClearItems, onEditItem }) {
-  const [sortBy, setSortBy] = useState('input');
-
-  let sortedItems;
-
-  switch (sortBy) {
-    case 'name':
-      sortedItems = items.slice().sort((a, b) => a.name.localeCompare(b.name));
-      break;
-    case 'checked':
-      sortedItems = items.slice().sort((a, b) => a.checked - b.checked);
-      break;
-    default:
-      sortedItems = items;
-      break;
+export default function List({ items, onDeleteItem, onToggleItem, onClearItems, onEditItem }) {
+  if (items.length != 0) {
+    return (
+      <>
+        <div className="row justify-content-center pt-3">
+          <div className="col-md-8">
+            <ul className='list-group list-grup-border'>
+              {items.map((item, index) => (
+                <Item item={item} key={index} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} onEditItem={onEditItem} />
+              ))}
+            </ul>
+          </div>
+        </div>
+        <div className="col-md-12 text-center pt-2">
+          <button className='btn btn-sm btn-danger' onClick={onClearItems}>Bersihkan Daftar</button>
+        </div>
+      </>
+    );
   }
-
-  return (
-    <>
-    <div className="row justify-content-center pt-3">
-      <div className="col-md-8">
-        <ul className='list-group list-grup-border'>
-          {sortedItems.map((item,index) => (
-            <Item item={item} key={index} onDeleteItem={onDeleteItem} onToggleItem={onToggleItem} onEditItem={onEditItem} />
-          ))}
-        </ul>
-      </div>
-      {/* <div className="actions">
-        <select value={sortBy} onChange={(e) => setSortBy(e.target.value)}>
-          <option value="input">Urutkan berdasarkan urutan input</option>
-          <option value="name">Urutkan berdasarkan nama barang</option>
-          <option value="checked">Urutkan berdasarkan ceklis</option>
-        </select>
-        <button onClick={onClearItems}>Bersihkan Daftar</button>
-      </div> */}
-    </div>
-    </>
-  );
 }
